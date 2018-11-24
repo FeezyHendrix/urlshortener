@@ -20,7 +20,7 @@ class createUrl(generics.CreateAPIView):
         short_url = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
         serializer = Url(real_url = request.data['url'], generated_link = short_url, url_views = 0)
         serializer.save()
-        return JsonResponse({'status': status.HTTP_201_CREATED, 'data' : str(request.META['HTTP_HOST']) + '/l/' + str(serializer) })
+        return JsonResponse({'status': status.HTTP_201_CREATED, 'data' : 'http://' + str(request.META['HTTP_HOST']) + '/l/' + str(serializer) })
 
 def viewUrl(request, generated_link):
         print(generated_link)
