@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <script src="{% static 'js/index.js'%}"></script>
+    <title>Url Shortener</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrap">
+        <div class="search">
+          <h2 align="center">Input Link</h2>
+          {% csrf_token %}
+          <input
+            type="text"
+            id="link"
+            name="link"
+            class="searchTerm"
+            placeholder="Input a link to shorten it"
+          />
+          <button onclick="shortenUrl()" type="submit" class="searchButton">
+            Shorten
+          </button>
+          <br>
+          <h3> <a id="g_link" align="center" target="_blank" class="text-center"></a></h3>
+        </div>
+      </div>
+    </main>
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-light">
+            <a class="text-center" href="https://Feezyhendrix.github.io">Developed By FeezyHendrix</a>
+          </nav>
+  </body>
+</html>
