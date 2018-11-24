@@ -14,6 +14,5 @@ from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'urlshortener.settings')
 
-application = get_wsgi_application()
-
-application = DjangoWhiteNoise(application)
+app = get_wsgi_application()
+application = DjangoWhiteNoise(app)
